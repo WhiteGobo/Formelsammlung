@@ -1,0 +1,65 @@
+\documentclass{scrbook}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[fleqn]{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[exponent-product=\cdot]{siunitx}
+\usepackage{verbatim}
+
+
+% paket fürbilder
+\usepackage{tikz}
+\usetikzlibrary{shapes,calc}
+
+%% Metadaten
+\usepackage[pdftitle={Formelsammlung},
+    pdfsubject={Formeln und Werte der Physik},
+    pdfauthor={Richard Fechner},
+    pdfkeywords={Formel, Physik, Mathematik }]
+    {hyperref}
+
+%% Daten zu Autor
+\title{Formeln und Werte der Physik}
+\author{Richard Fechner}
+\date{\today}
+
+%% eigene Befehle
+\newcommand{\ableitung}[1]{\frac{\mathrm{d}}{\mathrm{d} #1}}
+\newcommand{\ableitungv}[2]{\frac{\mathrm{d}#2}{\mathrm{d} #1}}
+\newcommand{\ableitungii}[1]{\frac{\mathrm{d}^2}{\mathrm{d} #1^2}}
+\renewcommand{\exp}[1]{exp \left( #1 \right)}
+
+%% bestimme welche Kapitel in formelsamlung augenomen werden
+\includeonly{
+  molekuelphysik/molekuelphysik
+  ,mathematik/mathematik
+  ,mechanik/mechanik
+  ,naturkonstanten/naturkonstanten
+  ,chemie/chemie
+}
+
+%% Stelle Nummeroerung auf (kapitel).(gleichung)
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%% Anfang des Dokuments
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\include{mathematik/mathematik}
+
+\include{mechanik/mechanik}
+
+\include{molekuelphysik/molekuelphysik}
+
+\include{chemie/chemie}
+
+\include{naturkonstanten/naturkonstanten}
+
+
+\end{document}

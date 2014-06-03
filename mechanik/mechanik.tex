@@ -1,0 +1,50 @@
+\chapter{Mechanik}
+  \section{Newton-Mechanik}
+  \section{Langrange-Mechanik}
+    Newtonmechanik erweitert um Zwangskräfte $Z_i$:
+    \begin{equation}
+      m \ableitungii{t} x_i = F_i + Z_i
+    \end{equation}
+
+    D'Alembertsches Prinzip:
+    virtuelle Verrückung $\delta r_j$ \\
+    1) zeitlos, $\delta t=0$ \\
+    2) verträglich mit Zwangsbedingungen \\
+    3) infinitesimal klein 
+
+    \begin{align*}
+      \sum^N \left( m \ableitung{t} x_i -F_i\right) \delta r_i = \sum^N Z_i \delta r_i &\\
+      \sum^N Z_i \delta r_i= 0 &\\
+      \sum^N m \left(\ableitungii{t} x_i -F_i \right) \delta r_i= 0 &\\
+      \delta r_i= \sum^{3N-k} \frac{dr_j}{dq_j} \delta q_j&, \mathrm{~mit ~} r_i=r_i(q_1, ... , q_{3N-k}) \\
+      \sum_i^N D_i \delta r_i = \sum_j^{3N-k} \left( \sum_i^N F_i \ableitung{q_j} r_j \right) \delta q_j =  \sum_j^{3N-k} Q_j \delta q_j &
+      \end{align*}
+      \begin{align*}
+      \sum_i^N m \ableitungii{t} r_i \delta r_i &= \sum_j^{3N-k} \left( \sum_i^N m_i \ableitungii{t} r_i \ableitung{q_j} r_i \right) \delta q_j \\
+      &= \sum_j^{3N-k} \left( \sum_i^N \ableitung{t} \left( m_i \ableitung{t} r_i \ableitung{q_j} r_i \right) - m_i \ableitung{t} r_i \ableitung{t} \ableitung{q_j} r_i \right) \delta q_j = \\
+      &= \sum_j^{3N-k} \left( \sum_i^N \ableitung{t} \left( m_i v_i \ableitung{\dot q_j} v_i \right) - m_i v_i \ableitung{q_j} v_i \right) \delta q_j= \\
+      &= \sum_j^{3N-k} \left( \ableitung{t} \left( \ableitung{\dot q_j} \sum_i^N \frac{1}{2} m_i v_i^2 \right) - \ableitung{q_j} \sum_i^N \frac{1}{2} m_i v_i^2 \right) \delta q_j = \\
+      &= \sum_j^{3N-k} \left( \ableitung{t} \ableitung{\dot q_j} T - \ableitung{q_j} T \right) \delta q_j \\
+    \end{align*}
+    \begin{equation}
+      \sum_j^{3N-k} \left( \ableitung{t} \ableitungv{\dot q_j}{T} - \ableitungv{q_j}{T} - Q_j \right) \delta q_j= 0 
+    \end{equation}
+      ,mit $ T=\frac{1}{2} \sum_i^N m_i v_i^2$ \\
+      ,und $Q = \sum_i^N F_i \ableitung{q_j} r_i$
+    \begin{equation}
+      Q_j = \sum_i^N F_i \ableitung{q_j} r_i
+      = -\sum_i^N \ableitungv{r_i}{V} \ableitungv{q_j}{r_i} 
+      = -\sum_i^N \ableitungv{q_j}{V}
+    \end{equation}
+    Langrange-Funktion:
+    \begin{gather}
+      L =T-V \\
+      \ableitung{t} \ableitungv{\dot q_j}{L} - \ableitungv{q_j}{L} = 0
+    \end{gather}
+Vorgehensweise: \\
+    1) generalisierte Koordinaten finden, mit $r=r\left(q_1, ..., q_{3N-k}\right)$ \\
+    2) T, V aufstellen in kartesischen Koordinaten \\
+    3) T, V aufstellen in generalisierten Koordinaten \\
+    4) $L=T-V$ \\
+    5) Langrange-Gleichung aufstellen \\
+    6) lösen: $q_1(t) =...; q_2(t) =...$
